@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         imgPlant.image = UIImage(named: "blank.png")
         //btnMake.titleLabel?.text = btnTitle
-        btnMake.setTitle("Change Goal", for: .normal)
+        btnMake.setTitle("Make A Goal", for: .normal)
         //lets imageView be a button
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mintImageTapped(tapGestureRecognizer:)))
         imgEncourage.isUserInteractionEnabled = true
