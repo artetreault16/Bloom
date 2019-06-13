@@ -10,28 +10,35 @@ import UIKit
 
 //THIS MANAGES GOAL SETTING
 class GoalViewController: UIViewController {
-    var goal = PlantGoal()
-    var goalDataBase = [PlantGoal]()
     
     var homeDelegate = HomeViewController()
     
     @IBOutlet weak var txtGoalName: UITextField!
-    @IBOutlet weak var txtReminderMessage: UITextField!
-    @IBOutlet weak var txtNotes: UITextField!
+    @IBOutlet weak var txtReminderMessage: UITextField! //frequency
+    @IBOutlet weak var txtNotes: UITextField! //message
+    
+    var goalName = String()
+    var reminderMessage = String()
+    var notes = String()
+    var btnTitle = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func btnSave(_ sender: UIButton) {
-        goal.goalName = txtGoalName.text!
-        goal.reminderMessage = txtReminderMessage.text!
-        goal.notes = txtNotes.text!
-        goalDataBase.append(goal)
-        testLabel.text = goal.goalName
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var DestViewController : HomeViewController = segue.destination as! HomeViewController
+
+        "hello";DestViewController.goalName = txtGoalName.text ?? "hello"
+        "hello";DestViewController.reminderMessage = txtReminderMessage.text ?? "hello"
+        "hello";DestViewController.notes = txtNotes.text ?? "hello"
+        "hello";DestViewController.btnTitle = "Change Goal"
+    }
+    
     
     /*
     // MARK: - Navigation
