@@ -10,7 +10,6 @@ import UIKit
 
 //THIS MANAGES GOAL SETTING
 class GoalViewController: UIViewController {
-    
     var homeDelegate = HomeViewController()
     
     @IBOutlet weak var txtGoalName: UITextField!

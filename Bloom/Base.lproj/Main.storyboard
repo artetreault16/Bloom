@@ -115,6 +115,13 @@
                                 <rect key="frame" x="92" y="199" width="144" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="encourageMINT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrM-BL-eE3">
+                                <rect key="frame" x="282" y="635" width="77" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85898227510000003" green="0.88649075909999997" blue="0.86434557410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MaT-eJ-7dQ"/>
@@ -242,7 +249,6 @@
         <image name="watering-can copy" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yel-Cu-2a2"/>
         <segue reference="8Qf-2N-DYL"/>
     </inferredMetricsTieBreakers>
 </document>

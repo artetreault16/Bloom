@@ -34,8 +34,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imgPlant.image = UIImage(named: "blank.png")
-        //btnMake.titleLabel?.text = btnTitle
-        btnMake.setTitle("Make A Goal", for: .normal)
+        if btnTitle != "Change Goal"{
+            btnTitle = "Make Goal"
+            btnMake.setTitle(btnTitle, for: .normal)
+        }else{
+            btnTitle = "Change Goal"
+            btnMake.setTitle(btnTitle, for: .normal)
+
+        }
         //lets imageView be a button
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mintImageTapped(tapGestureRecognizer:)))
         imgEncourage.isUserInteractionEnabled = true
@@ -44,6 +50,10 @@ class HomeViewController: UIViewController {
         let tapGestureRecognizerWater = UITapGestureRecognizer(target: self, action: #selector(waterImageTapped(tapGestureRecognizerWater:)))
         imgWater.isUserInteractionEnabled = true
         imgWater.addGestureRecognizer(tapGestureRecognizerWater)
+        
+        let tapGestureRecognizerPlant = UITapGestureRecognizer(target: self, action: #selector(plantImageTapped(tapGestureRecognizer:)))
+        imgPlant.isUserInteractionEnabled = true
+        imgPlant.addGestureRecognizer(tapGestureRecognizerPlant)
         
         //sharing data across files
         lblGoalName.text = goalName
@@ -62,6 +72,18 @@ class HomeViewController: UIViewController {
             userGrow.remove(at: 0)
         }
         
+        if imgPlant.image == UIImage(named: "flowerD"){
+            lblGoalName.text = "Tap Your Plant!"
+        }
+        
+    }
+    
+    @objc func plantImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        if imgPlant.image == UIImage(named: userGrow[userGrow.count-1]){
+            var alertController = UIAlertController(title: "Congratulations! 🎉", message: "You completed your goal!", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "YAY!", style: UIAlertAction.Style.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     
@@ -138,15 +160,11 @@ class HomeViewController: UIViewController {
         }))
         alertController.addAction(UIAlertAction(title: "Didn't☹️", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
-        
-        
-        //some weird count-y stuff
-        //if presses did it
-            //run this stuff
-        
-        
+    
+        if imgPlant.image == UIImage(named: "flowerC"){
+            lblGoalName.text = "Tap Your Plant!"
+        }
     }
-
     
     
     /*
